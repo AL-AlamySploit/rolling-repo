@@ -1,0 +1,149 @@
+Package: androfetch
+Architecture: all
+Version: 3.12
+Maintainer: ABHacker Official <abhackerofficial>
+Installed-Size: 20
+Depends: ruby
+Filename: dists/abhacker/main/binary-all/androfetch.deb
+Size: 10632
+MD5sum: ff114a487d7b3f84f0628af743ed30a1
+SHA1: fe91202bba8b0b91b919c5bcec53d75bbe81e850
+SHA256: ac7008b96abd703a8f9135232e56a95b65d61efcb83485e8b2d4e2a7a9cb6ee2
+SHA512: cf0111653c67f0e7bc9fbb72cc8102ee5bb120c64287e1f7b9544f596cb2a76bdeee526a4dbcfa84e0d488e644d6fc2b5118d90bfc12c41dc19471a7be0c872c
+Homepage: https://github.com/abhackerofficial
+Description: androfetch displays information about your android system.
+
+Package: ascii-banner
+Architecture: all
+Version: 1.6
+Maintainer: ABHacker Official <abhackerofficial>
+Installed-Size: 12
+Depends: wget, ruby, figlet, unrar
+Filename: dists/abhacker/main/binary-all/ascii-banner.deb
+Size: 3360
+MD5sum: c0c33ce6e174a0a5563543d593f31821
+SHA1: 7631c7830305cd04f515e22ae011dc3bcbf7af66
+SHA256: 99a6ba24613f3813091298be72ab7b4d80491a94bb34e2654c0c6354f511739d
+SHA512: e6bfad5332da6f0c418f2380a79a39fe3291f287bc6d4585442562300b2db331e29947b9cfd3ed2e554089e00ecdcf69d6f953cfcf379790ea62571815a8c46b
+Homepage: https://github.com/abhackerofficial
+Description: A ascii banner generator for termux.
+
+Package: get-secure
+Architecture: all
+Version: 1.22
+Maintainer: ABHacker Official <abhackerofficial>
+Installed-Size: 16
+Depends: openssl-tool
+Filename: dists/abhacker/main/binary-all/get-secure.deb
+Size: 9700
+MD5sum: c3420d0beae1cec8cdd5684b8ebc15c9
+SHA1: 0ebc23c4ebabb2f2e1df248af88411f53cccde05
+SHA256: 6c20e53638f745d4969588cb3c136533f038c1b47211e90dc0f79144f16cfa06
+SHA512: 306155f3e5d162ccfc68de247e569db2069d90900cd419825c6a1f1f51a37111c688e26693d13ac3f38842c5e3e90e3f3730842e82379e96faf9f8f48cf37d2d
+Homepage: https://github.com/abhackerofficial
+Description: A powerful security tool for your personal use and data, strong passwords.
+
+Package: metasploit
+Architecture: all
+Version: 6.0.31
+Maintainer: ABHacker Official <abhackerofficial>
+Installed-Size: 100
+Depends: apr, apr-util, autoconf, bison, clang, coreutils, curl, findutils, git, libffi, libgmp, libiconv, libpcap, libsqlite, libtool, libxml2, libxslt, make, ncurses, ncurses-utils, openssl, pkg-config, postgresql, readline, resolv-conf, ruby (>= 2.7.0), tar, termux-elf-cleaner, termux-tools, unzip, wget, zip, zlib
+Filename: dists/abhacker/main/binary-all/metasploit.deb
+Size: 2840
+MD5sum: 45c749a821c414961bfc72d69847fe10
+SHA1: 7d347300f772c331bfd947364876c0b05fe9c1cd
+SHA256: 07a55042aaa41cd0baf834c3f7b2a7b0aba78904e0bcc865c95a34cf7ec30610
+SHA512: 5faeec9a6eb929092fd439f76e7c41010d35c3f18160e96880daf88589c3d6936e6dbe59540686f318b94bb2354932d82c444755511d410555464e32d71fd94f
+Homepage: https://www.metasploit.com/
+Description: Advanced open-source platform for developing, testing and using exploit code. (installer)
+
+Package: msvenom
+Architecture: all
+Version: 4.06
+Maintainer: ABHacker Official <abhackerofficial>
+Installed-Size: 8
+Depends: unstable-repo, metasploit
+Filename: dists/abhacker/main/binary-all/msvenom.deb
+Size: 2488
+MD5sum: 151d2ff4b2b761122f217709066943b7
+SHA1: ecf2ab01c66480cbc31d4e0642face77a2d3ac06
+SHA256: 6b74fbdd638f76a82e0ceb6753d617a01d424777a1c4f8df9129dcfeea14a4f7
+SHA512: 2f2f7c2283dfbd1260a101148c0424e60d670926d70a9e1f2f7dcee3af232e632cbd53b9139f3814703acbb5c0eca41354e33a2254cefdb5a959e489da5c8497
+Homepage: https://github.com/abhackerofficial
+Description: Payload generator program for android platform.
+
+Package: ngrok-server
+Architecture: all
+Version: 2.28
+Maintainer: ABHacker Official <abhackerofficial>
+Installed-Size: 10
+Depends: curl
+Filename: dists/abhacker/main/binary-all/ngrok-server.deb
+Size: 2588
+MD5sum: 6d302cc003d81243577d1064f777e099
+SHA1: b6017f8891660a06d7b1060166a99cab0a3ab4ea
+SHA256: 501f947ad16577fe6fdd5c20bd2539b9ae25225150d3e1f23934e5dfc50ff1a3
+SHA512: 3ae36600791b8d7f83f29a30a1a86fe6011a6a5c7b7f0e5718177a9a11ec2ba313d43c74d2859a3f55403e65ebaa4126a4b1a1a6d99eb314582f203e7675288d
+Homepage: https://github.com/abhackerofficial
+Description: This tool is usually made for Ngrok, so you can make ngrok backgroud usage without turn on your Hotspot.
+
+Package: osmux
+Architecture: all
+Version: 1.26
+Maintainer: ABHacker Official <abhackerofficial>
+Installed-Size: 17
+Depends: wget
+Filename: dists/abhacker/main/binary-all/osmux.deb
+Size: 4524
+MD5sum: 8fe8ddc7d8d247d64f5bcf3951376cf5
+SHA1: 047c9c4632c27a829746fd130d9a8cc06dd680cb
+SHA256: f441b15c0eda01cef5ebff848ce6da65f5aee9b1ca521d93d3a73287e828aedc
+SHA512: bc272fdb8dfa812375551b83b661b8a6453a5e74d5676a970ddbd9792a3b260898e9c8254300b6b61a9d9e56b0ad075f306b01541d71dab7a597c1a2fc52736e
+Homepage: https://github.com/abhackerofficial
+Description: osmux is a installer of types of linux distro.
+
+Package: tbackup
+Architecture: all
+Version: 1.3.6
+Maintainer: ABHacker Official <abhackerofficial>
+Installed-Size: 2
+Depends: tar
+Filename: dists/abhacker/main/binary-all/tbackup.deb
+Size: 2348
+MD5sum: d8a0d2b9697c02e8a536b8d127eab2e5
+SHA1: e231ec3c012b633661656556814b3b5061a6124f
+SHA256: 764c18089e5fe4342ea0d72973046482afb433701a7b037b3574438d6aacc453
+SHA512: bfac1ada05056333274e98da20d0bd09fbd709ca342cbfbe499192b4a82d76dc4f46f2ec2e27272eea40857129c3be0839e97497d18a6ba8767f481d24e596b2
+Homepage: https://github.com/abhackerofficial
+Description: A Daily Termux Backup Script.
+
+Package: termux-backup
+Architecture: all
+Version: 1.2
+Maintainer: ABHacker Official <abhackerofficial>
+Installed-Size: 10
+Filename: dists/abhacker/main/binary-all/termux-backup.deb
+Size: 4228
+MD5sum: fbb04e61a2fec7c5269e8db640adc695
+SHA1: af1a9b66cac877556ace958026d531fa6e5b40f7
+SHA256: 2d113409edb4a592faf0e526f637fccad3aa3a5f75faba09d217e4901813c4d1
+SHA512: 8efc15dae7f70715de0cd859ee7fc224e221287a0002d31d21013433f1215aeb320c9128f560a30cd71a028e1c66a9622b38ec9633c59c1f509cd53839cf48cd
+Homepage: https://github.com/abhackerofficial
+Description: termux-backup to backing up and restoring your Termux data..
+
+Package: theme-engine
+Architecture: all
+Version: 5.4
+Maintainer: ABHacker Official <abhackerofficial>
+Installed-Size: 47600
+Depends: git, zsh, sox, wget, unrar, lsd, ncurses-utils
+Filename: dists/abhacker/main/binary-all/theme-engine.deb
+Size: 1696
+MD5sum: 76423f6086c432e8d0f3522214fe85b2
+SHA1: 6aaecb4293dc9024fd5f46b8851bf64713a9a191
+SHA256: ce706807c28d533f5c9dd99d2f072a8baed6d1484a79a2b8e5497f69e585a885
+SHA512: 6d98b6ad9580c4ccb25a1d6530e9b37b5de9c4bd69755930c08ce4608cbbd17123419784ec67eb11e36ee4cd88c8d92274aa1bb0dbb595d3cc971717f797b4ba
+Homepage: https://github.com/abhackerofficial
+Description: Theme-Engine is usually made for modification & customization, so you can make trunks even more Colourful and better your Termux.
+
