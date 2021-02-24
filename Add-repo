@@ -1,0 +1,196 @@
+#!/usr/bin/env bash
+
+
+export PREFIX="/data/data/com.termux/files/usr"
+export REPO_DIR=$"$PREFIX/etc/apt/sources.list.d/abhacker.repo.list"
+export PACKAGE=$"${PREFIX}/share/gnupg"
+export APT_DIR="${PREFIX}/etc/apt"
+export SOURCES_LIST="${APT_DIR}/sources.list.d"
+export PREFIX="${PREFIX}"
+export PUB_DIR=$"$PREFIX/etc/apt/trusted.gpg"
+export TERMUX=$(uname -o | grep -o "Android")
+export ARCH=`dpkg --print-architecture`
+export TMPDIR="${PREFIX}/tmp"
+
+if [[ $TERMUX != *'Android'* ]];then
+echo "Sorry, but your system doesn't support !"
+# if you're removed that lines I don't know what happens to you !
+exit 1
+fi
+
+connection() {
+#wget -q --spider http://google.com
+curl -Is http://www.google.com &> /dev/null
+}
+
+true() {
+printf "\r\e[93m[Connecting to github.io]... "
+}
+false() {
+printf "\r\e[93m[Connecting to github.io]... "
+sleep 0.5
+printf "\e[91m[Failed connect to github.io]...\n"
+connection || printf "\e[91m); Connection error code : $?\n"
+}
+
+connections() {
+connection
+if [[ $? -eq 0 ]];then
+connection | true
+else
+connection | false
+exit
+fi
+}
+
+connections
+
+if [ ! -e "${SOURCES_LIST}" ]; then
+    mkdir -p "${SOURCES_LIST}"
+fi
+
+#if [ -z "${TMPDIR}" ]; then
+#    TMPDIR="${PREFIX}/tmp"
+#fi
+
+if [ ! -e "${TMPDIR}" ]; then
+    mkdir -p "${TMPDIR}"
+fi
+
+if [ ! -d "$PACKAGE" ];then
+    echo -e "\nInstalling dependencies..."
+    apt update ; apt install gnupg -y
+fi
+
+# Download signed key
+sleep 0.1
+   printf "\r\e[93m[Connecting to github.io]... "
+sleep 0.6
+   printf "[Connected to github.io]..."
+sleep 0.3
+echo -en "\033[?25l"
+   printf "\r\e[93m                                                            "
+echo -en "\033[?12l\033[?25h"
+   printf "\rRetrieving informations [${ARCH}]..."
+sleep 0.3
+
+grep -q "abhackerofficial@gmail.com" $PUB_DIR &> /dev/null
+if [ $? != 0 ]; then
+sleep 0.4
+   echo -en "\033[?25l"
+printf "\r\e[93m                                                               "
+   echo -en "\033[?12l\033[?25h"
+printf "\r\e[93mAdding Public GPG Key [${ARCH}]... "
+   curl -fsSL https://abhackerofficial.github.io/abhacker.repo/abhacker.repo.key | apt-key add &> /dev/null &
+printf "OK"
+fi
+
+if [ ! -f "$PREFIX/etc/raw_keys" ];then
+mkdir -p ${PREFIX}/etc/raw_keys
+fi
+
+if [ ! -f "$PREFIX/etc/raw_keys/abhacker.repo.key" ];then
+curl -fsSL https://github.com/abhackerofficial/abhacker.repo/raw/master/abhacker.repo.key | cat &> ${PREFIX}/etc/raw_keys/abhacker.repo.key &
+fi
+
+get1=`curl -fsSL https://github.com/abhackerofficial/abhacker.repo/raw/master/abhacker.repo.key | awk NR==3 &`
+get2=`cat $PREFIX/etc/raw_keys/abhacker.repo.key | awk NR==3`
+
+if [[ ${get1} != ${get2} ]];then
+sleep 0.4
+   echo -en "\033[?25l"
+printf "\r\e[93m                                                               "
+   echo -en "\033[?12l\033[?25h"
+printf "\r\e[93mAdding Public GPG Key [${ARCH}]... "
+curl -fsSL https://github.com/abhackerofficial/abhacker.repo/raw/master/abhacker.repo.key | cat &> ${PREFIX}/etc/raw_keys/abhacker.repo.key &
+  curl -fsSL https://github.com/abhackerofficial/abhacker.repo/raw/master/abhacker.repo.key | apt-key add &> /dev/null
+ printf "OK"
+else
+ printf "\r\e[93mPublic GPG Key Already exists [${ARCH}]..."
+fi
+
+aarch64_architecture()
+{
+printf "# abhacker's repository\ndeb [arch=all,aarch64] https://abhackerofficial.github.io/abhacker.repo/ abhacker main" > "${SOURCES_LIST}/abhacker.repo.list"
+}
+
+arm_architecture()
+{
+printf "# abhacker's repository\ndeb [arch=all,arm] https://abhackerofficial.github.io/abhacker.repo/ abhacker main" > "${SOURCES_LIST}/abhacker.repo.list"
+}
+
+i686_architecture()
+{
+printf "# abhacker's repository\ndeb [arch=all,i686] https://abhackerofficial.github.io/abhacker.repo/ abhacker main" > "${SOURCES_LIST}/abhacker.repo.list"
+}
+
+x86_64_architecture()
+{
+printf "# abhacker's repository\ndeb [arch=all,x86_64] https://abhackerofficial.github.io/abhacker.repo/ abhacker main" > "${SOURCES_LIST}/abhacker.repo.list"
+}
+
+
+# abhacker's repository
+if [ -f "$REPO_DIR" ];then
+sleep 0.5
+printf "\r\e[93mABHacker's Repository Already exists [${ARCH}]..."
+else
+printf "\r\e[93mAdding ABHacker's Repository [${ARCH}]... "
+sleep 0.5
+printf "OK"
+case "$ARCH" in
+    aarch64)
+        aarch64_architecture
+        ;;
+    arm)
+        arm_architecture
+        ;;
+    armhf)
+        arm_architecture
+        ;;
+    i686)
+        i686_architecture
+        ;;
+    x86_64)
+        x86_64_architecture
+        ;;
+esac
+fi
+
+sleep 0.7
+printf "\r\e[93mUpdating Termux emulator [${ARCH}]...              \n\e[0m"
+apt-get update
+echo -e "\e[94mInstall package  : apt install <pkg> ..."
+echo -e "GitHub help page : https://github.com/abhackerofficial/abhacker.repo\e[0m"
+
+if [[ ${1} == "--install" || ${1} == "-i" ]];then
+ if [[ ${#2} -gt "0" ]];then
+  apt install "${2}"
+  if [[ ${3} == "--run" || ${3} == "-r" ]];then
+   if [[ ${#3} -gt "0" ]];then
+   ${4} $5 $6 $7 $8 $9
+  fi
+ fi
+fi
+
+elif [[ ${1} == "--update" || ${1} == "-u" ]];then
+  if [[ ${#2} -gt "0" ]];then
+ apt upgrade "${2}"
+  fi
+
+elif [[ ${1} == "--list" || ${1} == "-l" ]];then
+list() {
+ apt list | grep -a "abhacker" | head -n -0
+}
+ printf "`list`\n" | cut -d ":" -f 2
+
+elif [[ ${1} == "--show" || ${1} == "-s" ]];then
+  if [[ ${#2} -gt "0" ]];then
+  apt search ${2}
+  fi
+
+elif [[ ${1} == "--remove" || ${1} == "-r" ]];then
+  if [[ ${#2} -gt "0" ]];then
+apt autoremove ${2}
+  fi
+fi
