@@ -1,4 +1,4 @@
-# rolling-repo
+# rolling.repo
 The Termux repository of rolling.
 
 
