@@ -2,7 +2,7 @@
 
 
 export PREFIX="/data/data/com.termux/files/usr"
-export REPO_DIR=$"$PREFIX/etc/apt/sources.list.d/rolling-repo.list"
+export REPO_DIR=$"$PREFIX/etc/apt/sources.list.d/rolling.repo.list"
 export PACKAGE=$"${PREFIX}/share/gnupg"
 export APT_DIR="${PREFIX}/etc/apt"
 export SOURCES_LIST="${APT_DIR}/sources.list.d"
@@ -81,7 +81,7 @@ sleep 0.4
 printf "\r\e[93m                                                               "
    echo -en "\033[?12l\033[?25h"
 printf "\r\e[93mAdding Public GPG Key [${ARCH}]... "
-   curl -fsSL https://github.com/AL-AlamySploit/rolling-repo/blob/main/rolling-repo.key | apt-key add &> /dev/null &
+   curl -fsSL https://github.com/AL-AlamySploit/rolling.repo/blob/main/rolling-repo.key | apt-key add &> /dev/null &
 printf "OK"
 fi
 
@@ -90,10 +90,10 @@ mkdir -p ${PREFIX}/etc/raw_keys
 fi
 
 if [ ! -f "$PREFIX/etc/raw_keys/rolling-repo.key" ];then
-curl -fsSL https://github.com/AL-AlamySploit/rolling-repo/blob/main/rolling-repo.key | cat &> ${PREFIX}/etc/raw_keys/abhacker.repo.key &
+curl -fsSL https://github.com/AL-AlamySploit/rolling.repo/blob/main/rolling-repo.key | cat &> ${PREFIX}/etc/raw_keys/abhacker.repo.key &
 fi
 
-get1=`curl -fsSL https://github.com/AL-AlamySploit/rolling-repo/blob/main/rolling-repo.key | awk NR==3 &`
+get1=`curl -fsSL https://github.com/AL-AlamySploit/rolling.repo/blob/main/rolling-repo.key | awk NR==3 &`
 get2=`cat $PREFIX/etc/raw_keys/rolling-repo.key | awk NR==3`
 
 if [[ ${get1} != ${get2} ]];then
@@ -102,8 +102,8 @@ sleep 0.4
 printf "\r\e[93m                                                               "
    echo -en "\033[?12l\033[?25h"
 printf "\r\e[93mAdding Public GPG Key [${ARCH}]... "
-curl -fsSL https://github.com/AL-AlamySploit/rolling-repo/blob/main/rolling-repo.key | cat &> ${PREFIX}/etc/raw_keys/abhacker.repo.key &
-  curl -fsSL https://github.com/AL-AlamySploit/rolling-repo/blob/main/rolling-repo.key | apt-key add &> /dev/null
+curl -fsSL https://github.com/AL-AlamySploit/rolling.repo/blob/main/rolling-repo.key | cat &> ${PREFIX}/etc/raw_keys/abhacker.repo.key &
+  curl -fsSL https://github.com/AL-AlamySploit/rolling.repo/blob/main/rolling-repo.key | apt-key add &> /dev/null
  printf "OK"
 else
  printf "\r\e[93mPublic GPG Key Already exists [${ARCH}]..."
@@ -111,22 +111,22 @@ fi
 
 aarch64_architecture()
 {
-printf "# rolling's repository\ndeb [arch=all,aarch64] https://github.com/AL-AlamySploit/rolling-repo/ rolling-repo main" > "${SOURCES_LIST}/rolling-repo.list"
+printf "# rolling's repository\ndeb [arch=all,aarch64] https://github.com/AL-AlamySploit/rolling.repo/ rolling-repo main" > "${SOURCES_LIST}/rolling-repo.list"
 }
 
 arm_architecture()
 {
-printf "# rolling's repository\ndeb [arch=all,arm] https://github.com/AL-AlamySploit/rolling-repo/ rolling-repo main" > "${SOURCES_LIST}/rolling-repo.list"
+printf "# rolling's repository\ndeb [arch=all,arm] https://github.com/AL-AlamySploit/rolling.repo/ rolling-repo main" > "${SOURCES_LIST}/rolling-repo.list"
 }
 
 i686_architecture()
 {
-printf "# rolling's repository\ndeb [arch=all,i686] https://github.com/AL-AlamySploit/rolling-repo rolling-repo main" > "${SOURCES_LIST}/rolling-repo.list"
+printf "# rolling's repository\ndeb [arch=all,i686] https://github.com/AL-AlamySploit/rolling.repo rolling-repo main" > "${SOURCES_LIST}/rolling-repo.list"
 }
 
 x86_64_architecture()
 {
-printf "# abhacker's repository\ndeb [arch=all,x86_64] https://github.com/AL-AlamySploit/rolling-repo rolling-repo main" > "${SOURCES_LIST}/rolling-repo.list"
+printf "# abhacker's repository\ndeb [arch=all,x86_64] https://github.com/AL-AlamySploit/rolling.repo rolling-repo main" > "${SOURCES_LIST}/rolling-repo.list"
 }
 
 
@@ -161,7 +161,7 @@ sleep 0.7
 printf "\r\e[93mUpdating Termux emulator [${ARCH}]...              \n\e[0m"
 apt-get update
 echo -e "\e[94mInstall package  : apt install <pkg> ..."
-echo -e "GitHub help page : https://github.com/AL-AlamySploit/rolling-repo\e[0m"
+echo -e "GitHub help page : https://github.com/AL-AlamySploit/rolling.repo\e[0m"
 
 if [[ ${1} == "--install" || ${1} == "-i" ]];then
  if [[ ${#2} -gt "0" ]];then
