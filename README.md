@@ -1,6 +1,11 @@
 # rolling.repo
 The Termux repository of rolling.
 
+> Add rolling.repo Repository via Command :
+
+| Method    | Command                                                     |
+|:----------|:------------------------------------------------------------|
+| **curl**  | `bash -c "$(curl -fsSL https://git.io/JBbpd)"`  |
 
 > Available Package lists :
 
