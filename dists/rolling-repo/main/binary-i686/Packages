@@ -9,7 +9,7 @@ Depends: gdbm, libandroid-support, libffi, libgmp, readline, openssl, libyaml, z
 Recommends: clang, make, pkg-config
 Replaces: ruby-dev
 Description: Dynamic programming language with a focus on simplicity and productivity
-Filename: dists/gushmazuko/main/binary-i686/ruby_2.7.2-3_i686.deb
+Filename: dists/rolling-repo/main/binary-i686/ruby_2.7.2-3_i686.deb
 Size: 4259850
 MD5Sum: 1245ffc8adead1ee56ff4e6edf1f5278
 SHA1: 4c85b7163ff9d3f3271a68948c438975f063988d
