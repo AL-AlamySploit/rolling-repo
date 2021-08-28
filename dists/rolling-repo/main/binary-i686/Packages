@@ -1,18 +1,17 @@
 Package: ruby
 Architecture: i686
-Version: 2.7.2
-Maintainer: ABHacker Official <abhackerofficial>
-Installed-Size: 22996
+Installed-Size: 23000
+Maintainer: rolling-repo <A l - A l a m y>
+Version: 2.7.2-3
+Homepage: https://www.ruby-lang.org/
+Breaks: ruby-dev
 Depends: gdbm, libandroid-support, libffi, libgmp, readline, openssl, libyaml, zlib
 Recommends: clang, make, pkg-config
-Breaks: ruby-dev
 Replaces: ruby-dev
-Filename: dists/abhacker/main/binary-i686/ruby.deb
-Size: 4259972
-MD5sum: e401290e57dd83c24557f83be2bee51f
-SHA1: 73efc1f302012733d003eb9b95f62c3380e291a1
-SHA256: 494f4747c1275b8b3dbfb216f6f169c270c7ddd406bbfafba06bc2c7669c2baa
-SHA512: a3ec8bb45c06005b07568198dddd228cf1f5cbf11a86728ecb56fdf3b2f0bf7e6df41f481b0eef647a94e1d01c2daf6ffa46abc323f58f39de06fe3bcd90efa7
-Homepage: https://www.ruby-lang.org/
 Description: Dynamic programming language with a focus on simplicity and productivity
-
+Filename: dists/gushmazuko/main/binary-i686/ruby_2.7.2-3_i686.deb
+Size: 4259850
+MD5Sum: 1245ffc8adead1ee56ff4e6edf1f5278
+SHA1: 4c85b7163ff9d3f3271a68948c438975f063988d
+SHA256: 57d502c547aa23d17287a5a15fb114cb1f60ff07868b23af1cabe4d93928e904
+SHA512: 678d954abafb6010896d2139e2d858f926537493351299611ea34a15eadeae2b3a3cec085a0ceb302163fd7d03dc7713d807750d3ac40bd61200832a6d1e21ae
