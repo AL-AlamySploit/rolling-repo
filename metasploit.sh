@@ -40,7 +40,7 @@ center "*** Dependencies installation..."
 #rm $PREFIX/etc/apt/sources.list.d/*
 
 # Add rolling-repo repository to install ruby 2.7.2 version
-echo 'deb https://github.com/AL-AlamySploit/rolling-repo/raw/master ALAlamySploit main'  | tee $PREFIX/etc/apt/sources.list.d/AL-AlamySploit.list
+echo 'deb https://github.com/AL-AlamySploit/rolling-repo/raw/master AL-AlamySploit main'  | tee $PREFIX/etc/apt/sources.list.d/AL-AlamySploit.list
 
 pkg install -y gnupg
 curl -fsSL https://raw.githubusercontent.com/AL-AlamySploit/rolling-repo/master/rolling-repo-gpg.pubkey | gpg --dearmor | tee $PREFIX/etc/apt/trusted.gpg.d/rolling-repo.gpg
