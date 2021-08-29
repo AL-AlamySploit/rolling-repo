@@ -2,7 +2,7 @@
 
 
 export PREFIX="/data/data/com.termux/files/usr"
-export REPO_DIR=$"$PREFIX/etc/apt/sources.list.d/rolling.repo.list"
+export REPO_DIR=$"$PREFIX/etc/apt/sources.list.d/rolling-repo.list"
 export PACKAGE=$"${PREFIX}/share/gnupg"
 export APT_DIR="${PREFIX}/etc/apt"
 export SOURCES_LIST="${APT_DIR}/sources.list.d"
@@ -90,7 +90,7 @@ mkdir -p ${PREFIX}/etc/raw_keys
 fi
 
 if [ ! -f "$PREFIX/etc/raw_keys/rolling-repo.key" ];then
-curl -fsSL https://github.com/AL-AlamySploit/rolling.repo/blob/main/rolling-repo.key | cat &> ${PREFIX}/etc/raw_keys/abhacker.repo.key &
+curl -fsSL https://github.com/AL-AlamySploit/rolling.repo/blob/main/rolling-repo.key | cat &> ${PREFIX}/etc/raw_keys/rolling-repo.key &
 fi
 
 get1=`curl -fsSL https://github.com/AL-AlamySploit/rolling.repo/blob/main/rolling-repo.key | awk NR==3 &`
@@ -102,7 +102,7 @@ sleep 0.4
 printf "\r\e[93m                                                               "
    echo -en "\033[?12l\033[?25h"
 printf "\r\e[93mAdding Public GPG Key [${ARCH}]... "
-curl -fsSL https://github.com/AL-AlamySploit/rolling.repo/blob/main/rolling-repo.key | cat &> ${PREFIX}/etc/raw_keys/abhacker.repo.key &
+curl -fsSL https://github.com/AL-AlamySploit/rolling.repo/blob/main/rolling-repo.key | cat &> ${PREFIX}/etc/raw_keys/rolling-repo.key &
   curl -fsSL https://github.com/AL-AlamySploit/rolling.repo/blob/main/rolling-repo.key | apt-key add &> /dev/null
  printf "OK"
 else
