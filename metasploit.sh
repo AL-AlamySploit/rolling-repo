@@ -37,7 +37,7 @@ echo
 center "*** Dependencies installation..."
 
 # Remove not working repositories
-#rm $PREFIX/etc/apt/sources.list.d/*
+rm $PREFIX/etc/apt/sources.list.d/*
 
 # Add rolling-repo repository to install ruby 2.7.2 version
 echo 'deb https://github.com/AL-AlamySploit/rolling-repo/raw/master AL-AlamySploit main'  | tee $PREFIX/etc/apt/sources.list.d/AL-AlamySploit.list
