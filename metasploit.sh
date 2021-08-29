@@ -1,9 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-r='\e[99;31m' # Red
-g='\e[99;32m' # Green
-y='\e[99;33m' # Yellow
-b='\e[99;34m' # Blue
+r='\033[1;31m' # Red
+g='\033[1;32m' # Green
+y='\033[1;33m' # Yellow
+b='\033[1;34m' # Blue
 
 echo "
     
