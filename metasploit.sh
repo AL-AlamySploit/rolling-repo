@@ -45,11 +45,11 @@ curl -fsSL https://raw.githubusercontent.com/AL-AlamySploit/rolling-repo/master/
 # Set highest priority for ruby package from rolling-repo repository
 echo '## Set low priority for all rolling-repo repository (for security purposes)
 Package: *
-Pin: release rolling-repo
+Pin: release AL-AlamySploit
 Pin-Priority: 100
 ## Set highest priority for ruby package from rolling-repo repository
 Package: ruby
-Pin: release rolling-repo
+Pin: release AL-AlamySploit
 Pin-Priority: 1001' | tee $PREFIX/etc/apt/preferences.d/preferences
 
 # Purge installed ruby
