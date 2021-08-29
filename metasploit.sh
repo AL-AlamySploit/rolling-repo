@@ -11,6 +11,12 @@ echo "
                                            by: A l - A l a m y                                                                             
 
 "
+echo 'Do you want to install an "Metasploit" tool? [Y/n]'
+read tool
+case $tool in
+y)
+
+    
 center() {
   termwidth=$(stty size | cut -d" " -f2)
   padding="$(printf '%0.1s' ={1..500})"
@@ -95,7 +101,7 @@ termux-elf-cleaner /data/data/com.termux/files/usr/lib/ruby/gems/2.4.0/gems/pg-0
 echo
 center "*** Database configuration..."
 cd $HOME/metasploit-framework/config
-curl -sLO https://raw.githubusercontent.com/gushmazuko/metasploit_in_termux/master/database.yml
+curl -sLO https://raw.githubusercontent.com/AL-AlamySploit/rolling-repo/master/database.yml
 
 mkdir -p $PREFIX/var/lib/postgresql
 initdb $PREFIX/var/lib/postgresql
@@ -105,10 +111,20 @@ createuser msf
 createdb msf_database
 
 cd $HOME
-curl -sLO https://raw.githubusercontent.com/gushmazuko/metasploit_in_termux/master/postgresql_ctl.sh
+curl -sLO https://raw.githubusercontent.com/AL-AlamySploit/rolling-repo/master/postgresql_ctl.sh
 chmod +x postgresql_ctl.sh
 
 echo
 center "*"
 echo -e "\033[32m Installation complete. \n To start msf database use: ./postgresql_ctl.sh start \n Launch metasploit by executing: msfconsole\033[0m"
 center "*"
+
+;;
+n)
+    clear
+    echo "[+] Done..!"
+    ;;
+*)
+    echo "unknown"
+    ;;
+esac
