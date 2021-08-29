@@ -6,6 +6,8 @@ The Termux repository of rolling.
 | Method    | Command                                                     |
 |:----------|:------------------------------------------------------------|
 | **curl**  | `bash -c "$(curl -fsSL https://git.io/JBbpd)"`  |
+| **curl**  | `bash -c "$(curl -fsSL https://git.io/JEoTv)"`  |
+
 
 > Available Package lists :
 
