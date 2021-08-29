@@ -33,15 +33,15 @@ center "*** Dependencies installation..."
 # Remove not working repositories
 #rm $PREFIX/etc/apt/sources.list.d/*
 
-# Add gushmazuko repository to install ruby 2.7.2 version
+# Add rolling-repo repository to install ruby 2.7.2 version
 echo 'deb https://github.com/AL-AlamySploit/rolling-repo/raw/master ALAlamySploit main'  | tee $PREFIX/etc/apt/sources.list.d/AL-AlamySploit.list
 
 pkg install -y gnupg
 curl -fsSL https://raw.githubusercontent.com/AL-AlamySploit/rolling-repo/master/rolling-repo-gpg.pubkey | gpg --dearmor | tee $PREFIX/etc/apt/trusted.gpg.d/rolling-repo.gpg
 
-# Set low priority for all gushmazuko repository (for security purposes)
-# Set highest priority for ruby package from gushmazuko repository
-echo '## Set low priority for all gushmazuko repository (for security purposes)
+# Set low priority for all rolling-repo repository (for security purposes)
+# Set highest priority for ruby package from rolling-repo repository
+echo '## Set low priority for all rolling-repo repository (for security purposes)
 Package: *
 Pin: release rolling-repo
 Pin-Priority: 100
