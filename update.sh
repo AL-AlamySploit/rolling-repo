@@ -3,7 +3,7 @@ clear
 pkg install python
 pkg install git
 cd
-rm -rif termux-packages
+rm -rif rolling-repo
 git clone https://github.com/AL-AlamySploit/rolling-repo
 clear
 echo "Type: cd "
